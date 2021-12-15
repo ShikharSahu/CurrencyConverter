@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/code/AndroidProjects/CurrencyCoverter/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/code/AndroidProjects/CurrencyCoverter/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/code/AndroidProjects/CurrencyCoverter/app/src/main/res/drawable/result_background.xml" value="0.2734375" />
-        <entry key="..\:/code/AndroidProjects/CurrencyCoverter/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/code/AndroidProjects/CurrencyCoverter/app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>
   </component>

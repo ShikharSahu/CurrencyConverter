@@ -1,22 +1,26 @@
-package com.example.currencycoverter
+package com.example.currencyconverter
 
-import android.content.ContentValues.TAG
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import com.example.currencycoverter.R
 import com.example.currencycoverter.databinding.ActivityMainBinding
-import com.example.currencycoverter.main.MainViewModel
+import com.example.currencyconverter.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
+// For every activity using Hilt,
+// we require this at the top
+
+// Reminder : to use different colors in different themes, create 2 different color files
+// 1 normal and other in a folder name similar to night
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    // get the view Model by the factory
     private val viewModel : MainViewModel by viewModels ()
     private lateinit var binding : ActivityMainBinding
 
@@ -32,7 +36,6 @@ class MainActivity : AppCompatActivity() {
                 binding.spFromCurrency.selectedItem.toString(),
                 binding.spToCurrency.selectedItem.toString()
             )
-            Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
         }
 
         lifecycleScope.launchWhenStarted {
@@ -41,24 +44,20 @@ class MainActivity : AppCompatActivity() {
                     is MainViewModel.CurrencyEvent.Success ->{
                         binding.progressCircular.isVisible = false
                         binding.tvResult.isVisible = true
-                        binding.tvResult.setTextColor(baseContext.getColor(R.color.design_default_color_on_primary))
+                        binding.tvResult.setTextColor(baseContext.getColor(R.color.textColor))
                         binding.tvResult.text = event.resultText
-                        Toast.makeText(this@MainActivity, "yooo success "+event.resultText, Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "onCreate: event.resultText")
                     }
                     is MainViewModel.CurrencyEvent.Failure ->{
                         binding.progressCircular.isVisible = false
                         binding.tvResult.isVisible = true
                         binding.tvResult.setTextColor(Color.RED)
                         binding.tvResult.text = event.errorText
-                        Toast.makeText(this@MainActivity,"yooo " + event.errorText, Toast.LENGTH_SHORT).show();
-
                     }
                     is MainViewModel.CurrencyEvent.Loading ->{
                         binding.progressCircular.isVisible = true
                         binding.tvResult.isVisible = false
-
                     }
+                    MainViewModel.CurrencyEvent.Empty -> Unit
                 }
             }
         }

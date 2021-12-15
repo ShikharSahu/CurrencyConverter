@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
-    tools:context=".MainActivity">
+    tools:context="com.example.currencyconverter.MainActivity">
 
     <TextView
         android:id="@+id/tvAppNameTitle"
@@ -106,7 +106,7 @@
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:padding="10dp"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:visibility="gone"
         app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toStartOf="@+id/btnCovert"

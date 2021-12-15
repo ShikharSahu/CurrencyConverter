@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:name=".CurrencyApplication"
+        android:name="com.example.currencyconverter.CurrencyApplication"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurrencyCoverter">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.currencyconverter.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
