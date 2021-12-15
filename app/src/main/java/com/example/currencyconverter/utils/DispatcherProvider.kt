@@ -1,6 +1,9 @@
-package com.example.currencycoverter.utils
+package com.example.currencyconverter.utils
 
 import kotlinx.coroutines.CoroutineDispatcher
+
+// Dispatcher provider interface
+// used in coroutine testing
 
 interface DispatcherProvider {
     val main : CoroutineDispatcher

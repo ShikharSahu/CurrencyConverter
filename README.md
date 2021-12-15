@@ -1,3 +1,6 @@
+# CurrencyConverter
+a simple currency converter based on MVVM architecture
+=======
 ### Uses:
 - MVVM architecture
 - View binding
